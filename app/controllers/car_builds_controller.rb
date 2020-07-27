@@ -1,4 +1,4 @@
-class BuildsController < ApplicationController
+class CarBuildsController < ApplicationController
 
     def index
         if !logged_in? 

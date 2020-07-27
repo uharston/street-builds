@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     def create 
         user = User.create(user_params)
         if user.valid? 
-            redirect_to builds_path 
+            redirect_to car_builds_path 
         else 
             redirect_to root_path 
         end 

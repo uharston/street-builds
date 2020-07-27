@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
         if user = User.find_by(username: params[:username]) 
             if user.authenticate(params[:password])
             session[:user_id] = user.id 
-            redirect_to builds_path 
+            redirect_to car_builds_path 
             end 
         else 
             redirect_to login_path 

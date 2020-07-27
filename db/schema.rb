@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_175547) do
+ActiveRecord::Schema.define(version: 2020_07_27_234744) do
+
+  create_table "car_builds", force: :cascade do |t|
+    t.integer "year"
+    t.string "make"
+    t.string "model"
+    t.string "engine"
+    t.string "drivetrain"
+    t.string "suspension"
+    t.string "wheels_and_tires"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
