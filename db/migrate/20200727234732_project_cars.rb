@@ -8,6 +8,7 @@ class ProjectCars < ActiveRecord::Migration[6.0]
       t.string :drivetrain 
       t.string :suspension 
       t.string :wheels_and_tires 
+      t.integer :owner_id 
     end 
   end
 end
