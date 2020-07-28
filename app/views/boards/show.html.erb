@@ -1,2 +1,5 @@
-<h1>Board#show</h1>
-<p>Find me in app/views/board/show.html.erb</p>
+<h1><%= @board.title%></h1>
+<p>Board Owner: <%= @board.project_car_admirer.username %> </p>
+<p>Projects: <% @board.admired_project_cars.each do |p| %> </p>
+    <%= p.year_make_model %>
+<% end %>

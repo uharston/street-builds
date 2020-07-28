@@ -12,19 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2020_07_28_202003) do
 
-  create_table "board_project_cars", force: :cascade do |t|
-    t.integer "board_id"
-    t.integer "project_car_id"
-    t.index ["board_id"], name: "index_board_project_cars_on_board_id"
-    t.index ["project_car_id"], name: "index_board_project_cars_on_project_car_id"
-  end
-
   create_table "boards", force: :cascade do |t|
     t.integer "admired_project_car_id"
     t.integer "project_car_admirer_id"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "boards_project_cars", force: :cascade do |t|
+    t.integer "board_id"
+    t.integer "project_car_id"
+    t.index ["board_id"], name: "index_boards_project_cars_on_board_id"
+    t.index ["project_car_id"], name: "index_boards_project_cars_on_project_car_id"
   end
 
   create_table "project_cars", force: :cascade do |t|

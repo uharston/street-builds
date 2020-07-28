@@ -11,5 +11,5 @@
 
 <h3>Your Boards</h3>
 <% @user.boards.each do |c| %>
-    <h4><%= c.title %> </h4>
+    <h4><%= link_to "#{c.title}", user_board_path(current_user, c) %> </h4>
 <% end %>

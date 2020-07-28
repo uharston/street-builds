@@ -17,6 +17,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    locate_board
   end
 
   def edit
@@ -32,5 +33,9 @@ class BoardsController < ApplicationController
 
   def locate_project_car
     @project_car = ProjectCar.find(params[:id])
+  end 
+
+  def locate_board 
+    @board = Board.find(params[:id])
   end 
 end
