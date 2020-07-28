@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-    before_action :check_user
+    
     
     def new 
+        
         @user = User.new 
     end 
 
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
     end 
 
     def show 
+        check_user
         locate_user
     end 
 

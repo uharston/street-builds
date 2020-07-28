@@ -1,0 +1,9 @@
+<h1>Board#new</h1>
+
+<h2>You need to create a board before saving this ride</h1>
+<%= form_tag user_boards_path(current_user) do%> 
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+    <%= hidden_field_tag :id, @project_car.id %>
+    <%= submit_tag "Save This Ride"%>
+<% end %>
