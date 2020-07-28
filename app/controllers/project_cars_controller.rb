@@ -11,7 +11,7 @@ class ProjectCarsController < ApplicationController
 
     def create 
         binding.pry 
-        project_car = ProjectCar.create(project_car_params)
+        project_car = current_user.owned_project_cars.create(project_car_params)
         if project_car.valid? 
             redirect_to project_car_path(project_car)
         else 

@@ -10,6 +10,6 @@
 <% end %>
 
 <h3>Your Boards</h3>
-<% @user.project_cars_admired.each do |c| %>
+<% @user.boards.each do |c| %>
     <h4><%= c.title %> </h4>
 <% end %>
