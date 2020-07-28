@@ -1,12 +1,11 @@
 class ProjectCarsController < ApplicationController
+    before_action :check_user
 
     def index
-        check_user 
         @project_cars = ProjectCar.all 
     end 
 
     def new 
-        check_user 
         @project_car = ProjectCar.new 
     end 
 

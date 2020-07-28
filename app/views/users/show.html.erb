@@ -1,0 +1,15 @@
+<h1> Welcome <%= @user.username %></h1>
+
+<h3>Your Garage</h3>
+<% @user.owned_project_cars.each do |c| %>
+    <h2><%= link_to "#{c.year} #{c.make} #{c.model}", project_car_path(c)%></h2>
+    <p>Engine: <%= c.engine %></p>
+    <p>Drivetrain: <%= c.drivetrain %></p>
+    <p>Suspension: <%= c.suspension %></p>
+    <p>Wheels And Tires: <%= c.wheels_and_tires %></p>
+<% end %>
+
+<h3>Your Boards</h3>
+<% @user.project_cars_admired.each do |c| %>
+    <h4><%= c.title %> </h4>
+<% end %>

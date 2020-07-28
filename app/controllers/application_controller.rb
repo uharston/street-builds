@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     # before_action :check_user 
-    helper_method :current_user
+    helper_method :current_user, :check_user
 
     def check_user 
         redirect_to root_path unless logged_in?

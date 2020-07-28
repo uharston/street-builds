@@ -5,3 +5,5 @@
 <p>Drivetrain: <%= @project_car.drivetrain %></p>
 <p>Suspension: <%= @project_car.suspension %></p>
 <p>Wheels And Tires: <%= @project_car.wheels_and_tires %></p>
+
+<p><%= "#{@project_car.admirers.count} Like" if @project_car.admirers %></p>

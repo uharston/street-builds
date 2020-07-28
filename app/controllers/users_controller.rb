@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :check_user
     
     def new 
         @user = User.new 
@@ -14,10 +15,14 @@ class UsersController < ApplicationController
     end 
 
     def show 
-
+        locate_user
     end 
 
     private 
+    
+    def locate_user 
+        @user = User.find(params[:id])
+    end 
 
     def user_params 
         params.require(:user).permit(:username, :email, :password, :admin)
