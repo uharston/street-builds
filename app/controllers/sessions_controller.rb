@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         user = User.create_from_omniauth(auth)
         if user.valid? 
             session[:user_id] = user.id 
-            redirect_to builds_path
+            redirect_to car_builds_path
         else 
             redirect_to root_path 
         end 

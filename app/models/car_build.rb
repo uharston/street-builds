@@ -1,0 +1,3 @@
+class CarBuild < ApplicationRecord
+
+end 
