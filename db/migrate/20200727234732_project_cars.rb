@@ -1,6 +1,6 @@
-class CarBuilds < ActiveRecord::Migration[6.0]
+class ProjectCars < ActiveRecord::Migration[6.0]
   def change
-    create_table :car_builds do |t| 
+    create_table :project_cars do |t| 
       t.integer :year 
       t.string :make 
       t.string :model 

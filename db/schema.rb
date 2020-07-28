@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_234744) do
+ActiveRecord::Schema.define(version: 2020_07_28_145759) do
 
-  create_table "car_builds", force: :cascade do |t|
+  create_table "boards", force: :cascade do |t|
+    t.integer "project_car_id"
+    t.integer "user_id"
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_car_id"], name: "index_boards_on_project_car_id"
+    t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
+  create_table "project_cars", force: :cascade do |t|
     t.integer "year"
     t.string "make"
     t.string "model"
@@ -20,10 +30,6 @@ ActiveRecord::Schema.define(version: 2020_07_27_234744) do
     t.string "drivetrain"
     t.string "suspension"
     t.string "wheels_and_tires"
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string "content"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,7 +1,7 @@
-<%= link_to "Car Builds All", car_builds_path %>
+<%= link_to "Car Builds All", project_cars_path %>
 <%= link_to "Profile", user_path(current_user) %>
-<h1><%= @car_build.year %> <%= @car_build.make %> <%= @car_build.model %></h1>
-<p>Engine: <%= @car_build.engine %></p>
-<p>Drivetrain: <%= @car_build.drivetrain %></p>
-<p>Suspension: <%= @car_build.suspension %></p>
-<p>Wheels And Tires: <%= @car_build.wheels_and_tires %></p>
+<h1><%= @project_car.year %> <%= @project_car.make %> <%= @project_car.model %></h1>
+<p>Engine: <%= @project_car.engine %></p>
+<p>Drivetrain: <%= @project_car.drivetrain %></p>
+<p>Suspension: <%= @project_car.suspension %></p>
+<p>Wheels And Tires: <%= @project_car.wheels_and_tires %></p>
