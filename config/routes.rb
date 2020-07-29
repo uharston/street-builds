@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   # resources :pins
   resources :boards
-  resources :cars, only: %i[index new create show] do 
+  resources :cars, only: %i[index new create show edit update delete] do 
     post '/pins', to: 'pins#create'
     resources :pins
   end 

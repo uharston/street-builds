@@ -6,6 +6,9 @@
 <p>Suspension: <%= @car.suspension %></p>
 <p>Wheels And Tires: <%= @car.wheels_and_tires %></p>
 
-<%= link_to "Save This Ride", new_car_pin_path(@car) %>
-
+<% if current_user == @car.owner %>
+    <%= link_to "Edit Your Build", edit_car_path(@car) %>
+<% else %>
+    <%= link_to "Save This Ride", new_car_pin_path(@car) %>
+<% end %>
 
