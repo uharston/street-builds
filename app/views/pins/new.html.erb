@@ -2,3 +2,16 @@
 <p>Find me in app/views/pins/new.html.erb</p>
 
 <h2>You need to create a board before saving this ride</h1>
+
+<%= form_for @pin do |f| %>
+    <%= f.label :board, "Board:"%>
+    
+    <%= f.collection_select :board_id, current_user.boards.all, :id, :title %>
+    <h3> Or Create a New Board:</h3>
+    <%= f.fields_for :board, Board.new do |board_attributes| %>
+        <%= board_attributes.text_field :title %>
+    <% end %>
+    <%= f.label :note, "Optional Note:"%>
+    <%= f.text_field :note %>
+    <%= f.submit%>
+<% end %>

@@ -3,8 +3,9 @@ class PinsController < ApplicationController
   end
 
   def new
-    @pin = Pin.new 
-    @boards = current_user.boards
+    binding.pry 
+    @pin = Pin.new
+    @pin.build_board
   end
 
   def create

@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'pins/index'
-  get 'pins/new'
-  get 'pins/create'
-  get 'pins/show'
-  get 'pins/update'
-  get 'pins/edit'
-  get 'pins/delete'
+  resources :pins
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
+  resources :boards
   resources :cars, only: %i[index new create show] do 
     post '/pins', to: 'pins#create'
     resources :pins
