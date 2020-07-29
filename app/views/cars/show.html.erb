@@ -6,9 +6,6 @@
 <p>Suspension: <%= @car.suspension %></p>
 <p>Wheels And Tires: <%= @car.wheels_and_tires %></p>
 
+<%= link_to "Save This Ride", new_car_pin_path(@car) %>
 
-<%= form_tag new_user_board_path(current_user), method: 'get' do%> 
-    <%= hidden_field_tag :id, @car.id %>
-    <%= submit_tag "Save This Ride"%>
-<% end %>
 
