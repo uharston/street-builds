@@ -19,14 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_202003) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "boards_project_cars", force: :cascade do |t|
-    t.integer "board_id"
-    t.integer "project_car_id"
-    t.index ["board_id"], name: "index_boards_project_cars_on_board_id"
-    t.index ["project_car_id"], name: "index_boards_project_cars_on_project_car_id"
-  end
-
-  create_table "project_cars", force: :cascade do |t|
+  create_table "cars", force: :cascade do |t|
     t.integer "year"
     t.string "make"
     t.string "model"
@@ -35,6 +28,16 @@ ActiveRecord::Schema.define(version: 2020_07_28_202003) do
     t.string "suspension"
     t.string "wheels_and_tires"
     t.integer "owner_id"
+  end
+
+  create_table "pins", force: :cascade do |t|
+    t.integer "board_id"
+    t.integer "car_id"
+    t.string "note"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_pins_on_board_id"
+    t.index ["car_id"], name: "index_pins_on_car_id"
   end
 
   create_table "users", force: :cascade do |t|
