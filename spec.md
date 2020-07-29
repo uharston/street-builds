@@ -18,14 +18,14 @@ Specs:
 
 - [ ] Include at least two has_many through relationships (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
 
-=> User has_many :comments, through: :project_cars
+=> User has_many :comments, through: :cars
 
 --------------------------------------------------------------------------------
 
 - [X] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
 
-=>  User has_many :project_cars, through: :boards 
-    ProjectCar has_many :users, through: :boards 
+=>  Board has_many :cars, through: :pins 
+    Car has_many :boards, through: :pins 
 
 -------------------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ Specs:
 
 -----------------------------------------------------------------------------
 
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [X] Include nested resource show or index (URL e.g. users/2/recipes)
 
 http://localhost:3000/users/7/boards
 
@@ -50,7 +50,7 @@ http://localhost:3000/users/7/boards
 
 - [X] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 
-http://localhost:3000/users/7/boards/new?id=3&commit=Save+This+Ride
+http://localhost:3000/cars/2/pins/new
 
 -----------------------------------------------------------------------------
 

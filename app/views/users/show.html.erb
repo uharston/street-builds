@@ -9,7 +9,4 @@
     <p>Wheels And Tires: <%= c.wheels_and_tires %></p>
 <% end %>
 
-<h3>Your Boards</h3>
-<% @user.boards.each do |c| %>
-    <h4><%= link_to "#{c.title}", user_board_path(current_user, c) %> </h4>
-<% end %>
+<h3><%= link_to "Your Boards", user_boards_path(@user) %></h3>
