@@ -1,5 +1,5 @@
 <h1><%= @board.title%></h1>
-<p>Board Owner: <%= @board.project_car_admirer.username %> </p>
-<p>Projects: <% @board.admired_project_cars.each do |p| %> </p>
+<p>Board Owner: <%= @board.user.username %> </p>
+<p>Projects: <% @board.project_cars.each do |p| %> </p>
     <%= p.year_make_model %>
 <% end %>

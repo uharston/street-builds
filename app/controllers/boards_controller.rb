@@ -8,11 +8,11 @@ class BoardsController < ApplicationController
   end
 
   def create
-    binding.pry 
     locate_project_car
-    @build = @project_car.boards.build(title: params[:title])
-    @build.project_car_admirer = current_user
-    @build.save
+    b = @project_car.boards.build(title: params[:title])
+    b.project_cars << @project_car
+    b.user = current_user
+    b.save
     redirect_to user_path(current_user)
   end
 

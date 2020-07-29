@@ -13,8 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_07_28_202003) do
 
   create_table "boards", force: :cascade do |t|
-    t.integer "admired_project_car_id"
-    t.integer "project_car_admirer_id"
+    t.integer "user_id"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

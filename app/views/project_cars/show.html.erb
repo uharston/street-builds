@@ -6,7 +6,6 @@
 <p>Suspension: <%= @project_car.suspension %></p>
 <p>Wheels And Tires: <%= @project_car.wheels_and_tires %></p>
 
-<p><%= "#{@project_car.admirers.count} Like" if @project_car.admirers %></p>
 
 <%= form_tag new_user_board_path(current_user), method: 'get' do%> 
     <%= hidden_field_tag :id, @project_car.id %>
