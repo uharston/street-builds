@@ -16,7 +16,11 @@ class PinsController < ApplicationController
       new_pins.save
       redirect_to user_path(current_user)
     elsif params[:pin][:board_id]
-
+      found_board = Board.find(params[:pin][:board_id])
+      new_pins = found_board.pins.build(note: params[:pin][:note])
+      new_pins.car = locate_car #
+      new_pins.save
+      redirect_to user_path(current_user)
     end 
 
   end
