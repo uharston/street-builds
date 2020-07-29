@@ -3,16 +3,15 @@ class BoardsController < ApplicationController
   end
 
   def new
-    locate_project_car
+    locate_car
     @board = Board.new 
   end
 
   def create
-    locate_project_car
-    b = @project_car.boards.build(title: params[:title])
-    b.project_cars << @project_car
-    b.user = current_user
-    b.save
+    new_board = current_user.boards.build(title: params[:title])
+    new_pins = new_board.pins.build
+    new_pins.car = locate_car
+    new_pins.save
     redirect_to user_path(current_user)
   end
 
@@ -31,8 +30,8 @@ class BoardsController < ApplicationController
 
   private 
 
-  def locate_project_car
-    @project_car = ProjectCar.find(params[:id])
+  def locate_car
+    @car = Car.find(params[:id])
   end 
 
   def locate_board 

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     post '/boards', to: 'boards#create'
     resources :boards
   end 
-  resources :project_cars, only: %i[index new create show]
+  resources :cars, only: %i[index new create show]
   resources :users, only: %i[show]
 
 

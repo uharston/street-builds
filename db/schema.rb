@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_202003) do
+ActiveRecord::Schema.define(version: 2020_07_29_175638) do
 
   create_table "boards", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_202003) do
     t.string "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "year"
     t.index ["board_id"], name: "index_pins_on_board_id"
     t.index ["car_id"], name: "index_pins_on_car_id"
   end

@@ -4,6 +4,6 @@
 <%= form_tag user_boards_path(current_user) do%> 
     <%= label_tag :title %>
     <%= text_field_tag :title %>
-    <%= hidden_field_tag :id, @project_car.id %>
+    <%= hidden_field_tag :id, @car.id %>
     <%= submit_tag "Save This Ride"%>
 <% end %>

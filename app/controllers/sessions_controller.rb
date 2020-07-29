@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         user = User.create_from_omniauth(auth)
         if user.valid? 
             session[:user_id] = user.id 
-            redirect_to project_cars_path
+            redirect_to cars_path
         else 
             redirect_to root_path 
         end 
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
         if user = User.find_by(username: params[:username]) 
             if user.authenticate(params[:password])
             session[:user_id] = user.id 
-            redirect_to project_cars_path 
+            redirect_to cars_path 
             end 
         else 
             redirect_to login_path 

@@ -1,0 +1,14 @@
+<%= link_to "Car Builds All", cars_path %>
+<%= link_to "Profile", user_path(current_user) %>
+<h1><%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
+<p>Engine: <%= @car.engine %></p>
+<p>Drivetrain: <%= @car.drivetrain %></p>
+<p>Suspension: <%= @car.suspension %></p>
+<p>Wheels And Tires: <%= @car.wheels_and_tires %></p>
+
+
+<%= form_tag new_user_board_path(current_user), method: 'get' do%> 
+    <%= hidden_field_tag :id, @car.id %>
+    <%= submit_tag "Save This Ride"%>
+<% end %>
+

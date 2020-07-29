@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     def create 
         user = User.create(user_params)
         if user.valid? 
-            redirect_to project_carss_path 
+            redirect_to cars_path 
         else 
             redirect_to root_path 
         end 
