@@ -3,7 +3,7 @@
 
 <h2>You need to create a board before saving this ride</h1>
 
-<%= form_for @pin do |f| %>
+<%= form_for(@pin, url: car_pins_path) do |f| %>
     <%= f.label :board, "Board:"%>
     
     <%= f.collection_select :board_id, current_user.boards.all, :id, :title %>
