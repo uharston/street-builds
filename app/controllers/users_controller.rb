@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
     
-    
     def new 
-        
         @user = User.new 
     end 
 
     def create 
         user = User.create(user_params)
         if user.valid? 
+            session[:user_id] = user.id 
             redirect_to cars_path 
         else 
-            redirect_to root_path 
+            flash[:error] = user.errors.messages
+            redirect_to signup_path 
         end 
     end 
 

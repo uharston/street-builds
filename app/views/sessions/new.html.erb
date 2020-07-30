@@ -1,6 +1,6 @@
 <h1>Log In</h1>
 
-
+<%= flash[:error] %>
 <%= form_tag '/login', method: :post do %>
     <%= label_tag :username %>
     <%= text_field_tag :username %>

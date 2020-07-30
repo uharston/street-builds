@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
             redirect_to cars_path 
             end 
         else 
+            flash[:error] = "Invalid Login or Password"
             redirect_to login_path 
         end 
     end 
