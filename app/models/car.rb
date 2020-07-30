@@ -12,21 +12,10 @@ class Car < ApplicationRecord
     has_many :users, through: :boards 
     belongs_to :owner, class_name: "User"
 
-    def self.search(search)
-        if search 
-            results = Car.where(make: search)
-        end
-    end
-
-    # def self.search_in_all_fields(search)
-    #     binding.pry 
-    #     self.where(
-    #       self.column_names
-    #         .map {|field| "#{field} like '%#{params[:search]}%'" }
-    #         .join(" or ")
-    #     )
-    #   end
-    # end
+    # scope :desc_year, ->
+    scope :search_all_fields, ->(text){
+        where("#{column_names.join(' || ')} like ?", "%#{text}%")
+      }
 
     def year_make_model
         "#{self.year} #{self.make} #{self.model}"
