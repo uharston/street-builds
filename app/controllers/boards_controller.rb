@@ -30,6 +30,8 @@ class BoardsController < ApplicationController
   end
 
   def destroy
+    locate_board.delete 
+    redirect_to user_boards_path(current_user)
   end
 
   private 

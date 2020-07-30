@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   delete '/pins/:id', to: 'pins#destroy', as: 'delete_pin'
   delete '/cars/:id', to: 'cars#destroy', as: 'delete_car'
+  delete '/boards/:id', to: 'boards#destroy', as: 'delete_board'
   get '/auth/:provider/callback' => 'sessions#omniauth'
   
   resources :users, only: %i[show] do 

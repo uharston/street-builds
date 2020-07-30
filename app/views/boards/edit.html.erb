@@ -11,3 +11,5 @@
     <%= p.car.year_make_model %> - <%= link_to "Edit Pin", edit_pin_path(p)%><br>
     <%= p.note %>
 <% end %>
+
+<%= link_to "Delete Board", delete_board_path(@board), method: 'delete' %>
