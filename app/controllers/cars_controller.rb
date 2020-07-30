@@ -15,6 +15,7 @@ class CarsController < ApplicationController
         if car.valid? 
             redirect_to car_path(car)
         else 
+            flash[:errors] = car.errors.messages
             redirect_to new_car_path 
         end 
     end 
@@ -32,7 +33,8 @@ class CarsController < ApplicationController
         if @car.valid? 
             redirect_to car_path(@car)
         else 
-            redirect_to new_car_path 
+            flash[:errors] = @car.errors.messages
+            redirect_to edit_car_path(@car) 
         end 
     end 
 

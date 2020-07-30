@@ -13,7 +13,12 @@ class BoardsController < ApplicationController
     new_pins = new_board.pins.build
     new_pins.car = locate_car
     new_pins.save
-    redirect_to user_path(current_user)
+    if new_pins.valid? 
+      redirect_to user_path(current_user)
+    else 
+      flash[:errors] = @board.errors.messages
+      redirect_to edit_board_path(@board)
+    end 
   end
 
   def show  
@@ -26,7 +31,12 @@ class BoardsController < ApplicationController
 
   def update
     locate_board.update(board_param)
-    redirect_to board_path(locate_board)
+    if @board.valid? 
+      redirect_to board_path(locate_board)
+    else 
+      flash[:errors] = @board.errors.messages
+      redirect_to edit_board_path(@board)
+    end 
   end
 
   def destroy

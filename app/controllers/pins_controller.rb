@@ -21,8 +21,10 @@ class PinsController < ApplicationController
       new_pins.car = locate_car #
       new_pins.save
       redirect_to user_path(current_user)
-    end 
-
+    else 
+      flash[:errors] = "Board title can't be blank"
+      redirect_to new_car_pin_path(locate_car)
+    end
   end
 
   def show

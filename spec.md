@@ -54,7 +54,7 @@ http://localhost:3000/cars/2/pins/new
 
 -----------------------------------------------------------------------------
 
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [X] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
 - [ ] The application is pretty DRY

@@ -1,5 +1,12 @@
 class Car < ApplicationRecord
-    # has_and_belongs_to_many :boards 
+    validates :year, presence: true
+    validates :make, presence: true
+    validates :model, presence: true
+    validates :engine, presence: true
+    validates :drivetrain, presence: true
+    validates :suspension, presence: true
+    validates :wheels_and_tires, presence: true
+
     has_many :pins
     has_many :boards, through: :pins
     has_many :users, through: :boards 

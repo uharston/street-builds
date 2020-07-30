@@ -1,7 +1,6 @@
-<h1>Pins#new</h1>
-<p>Find me in app/views/pins/new.html.erb</p>
 
 <h2>You need to create a board before saving this ride</h1>
+<%= flash[:errors] %>
 
 <%= form_for(@pin, url: car_pins_path) do |f| %>
     <%= f.label :board, "Board:"%>
