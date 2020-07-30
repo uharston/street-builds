@@ -1,5 +1,11 @@
 <%= link_to "Share Your Build", new_car_path %>
 
+<h3>Search</h3> 
+<%= form_tag(cars_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search])%>
+    <%= submit_tag "Search" %>
+<% end %>
+
 <% @cars.each do |c| %>
     <h2><%= link_to "#{c.owner.username}", user_path(c.owner)%> - <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></h2>
     <p>Engine: <%= c.engine %></p>

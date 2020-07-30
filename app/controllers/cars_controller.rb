@@ -2,8 +2,12 @@ class CarsController < ApplicationController
     before_action :check_user
 
     def index
-    
-        @cars = Car.all 
+        
+        if params[:search].present? 
+            @cars = Car.search(params[:search])
+        else
+            @cars = Car.all 
+        end 
     end 
 
     def new 
