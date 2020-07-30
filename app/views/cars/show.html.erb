@@ -8,7 +8,7 @@
 
 <% if current_user == @car.owner %>
     <%= link_to "Edit Your Build", edit_car_path(@car) %> - 
-    <%= link_to "Delete This Build", delete_car_path(@car), method: :delete %>
+    
 <% else %>
     <%= link_to "Save This Ride", new_car_pin_path(@car) %>
 <% end %>

@@ -7,13 +7,14 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
+  delete '/pins/:id', to: 'pins#destroy', as: 'delete_pin'
   delete '/cars/:id', to: 'cars#destroy', as: 'delete_car'
   get '/auth/:provider/callback' => 'sessions#omniauth'
   
   resources :users, only: %i[show] do 
     resources :boards, only: %i[index show]
   end
-  # resources :pins
+  resources :pins
   resources :boards
   resources :cars, only: %i[index new create show edit update] do 
     post '/pins', to: 'pins#create'

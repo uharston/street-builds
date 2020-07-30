@@ -1,2 +1,13 @@
-<h1>Pins#edit</h1>
-<p>Find me in app/views/pins/edit.html.erb</p>
+
+<h1><%= @pin.car.year %> <%= @pin.car.make %> <%= @pin.car.model %></h1>
+<p>Engine: <%= @pin.car.engine %></p>
+<p>Drivetrain: <%= @pin.car.drivetrain %></p>
+<p>Suspension: <%= @pin.car.suspension %></p>
+<p>Wheels And Tires: <%= @pin.car.wheels_and_tires %></p>
+<%= form_for @pin do |f| %>
+    <%= f.label :note, "Change Note" %>
+    <%= f.text_field :note %>
+    <%= f.submit%>
+<% end %>
+<%= link_to "Remove Pin", delete_pin_path(@pin), method: "delete"%> 
+

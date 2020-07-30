@@ -28,19 +28,34 @@ class PinsController < ApplicationController
   def show
   end
 
-  def update
-  end
-
   def edit
+    locate_pin
   end
 
-  def delete
+  def update
+    locate_pin.update(pin_param)
+    redirect_to board_path(@pin.board)
+  end
+
+
+
+  def destroy
+     locate_pin.delete
+     redirect_to user_path(current_user)
   end
 
   private 
 
   def locate_car
     @car = Car.find(params[:car_id])
+  end 
+
+  def locate_pin 
+    @pin = Pin.find(params[:id])
+  end 
+
+  def pin_param
+    params.require(:pin).permit(:note)
   end 
 
 

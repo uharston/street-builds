@@ -1,9 +1,11 @@
 <h1><%= @board.title%></h1>
-<p>Board Owner: <%= @board.user.username %> </p>
-<p>Projects: <% @board.cars.each do |p| %> </p>
-    <%= p.year_make_model %>
-<% end %>
-
 <% if current_user == @board.user %>
     <%= link_to "Edit Board", edit_board_path(@board)%>
 <% end %>
+<p>Board Owner: <%= @board.user.username %> </p>
+<p>Projects: <% @board.pins.each do |p| %> </p>
+    <%= p.car.year_make_model %>
+    <%= p.note %>
+<% end %>
+
+

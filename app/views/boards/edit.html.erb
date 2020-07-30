@@ -5,3 +5,9 @@
     <%= f.text_field :title %>
     <%= f.submit %>
 <% end %>
+
+<p>Board Owner: <%= @board.user.username %> </p>
+<p>Projects: <% @board.pins.each do |p| %> </p>
+    <%= p.car.year_make_model %> - <%= link_to "Edit Pin", edit_pin_path(p)%><br>
+    <%= p.note %>
+<% end %>

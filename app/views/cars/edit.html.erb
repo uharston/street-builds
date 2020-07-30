@@ -16,3 +16,5 @@
     <%= f.text_field :wheels_and_tires %><br>
     <%= f.submit %>
 <% end %>
+
+<%= link_to "Delete This Build", delete_car_path(@car), method: :delete %>

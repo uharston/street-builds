@@ -16,20 +16,20 @@ class BoardsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def show
-    binding.pry 
+  def show  
     locate_board
   end
 
-  def edit
-    binding.pry 
+  def edit 
     locate_board
   end
 
   def update
+    locate_board.update(board_param)
+    redirect_to board_path(locate_board)
   end
 
-  def delete
+  def destroy
   end
 
   private 
@@ -40,5 +40,9 @@ class BoardsController < ApplicationController
 
   def locate_board 
     @board = Board.find(params[:id])
+  end 
+
+  def board_param
+    params.require(:board).permit(:title)
   end 
 end
