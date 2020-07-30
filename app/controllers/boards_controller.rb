@@ -17,10 +17,13 @@ class BoardsController < ApplicationController
   end
 
   def show
+    binding.pry 
     locate_board
   end
 
   def edit
+    binding.pry 
+    locate_board
   end
 
   def update

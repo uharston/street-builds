@@ -24,15 +24,21 @@ class CarsController < ApplicationController
     end 
 
     def edit 
-
+        locate_car
     end 
 
     def update 
-
+        locate_car.update(car_params)
+        if @car.valid? 
+            redirect_to car_path(@car)
+        else 
+            redirect_to new_car_path 
+        end 
     end 
 
     def destroy 
-
+        locate_car.delete
+        redirect_to cars_path 
     end 
 
     private 

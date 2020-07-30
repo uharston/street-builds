@@ -1,2 +1,7 @@
-<h1>Board#edit</h1>
-<p>Find me in app/views/board/edit.html.erb</p>
+<h1><%= @board.title %></h1>
+
+<%= form_for @board do |f| %>
+    <%= f.label :title, "Change Title:"%>
+    <%= f.text_field :title %>
+    <%= f.submit %>
+<% end %>

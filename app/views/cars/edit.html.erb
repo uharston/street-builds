@@ -1,1 +1,18 @@
-edit
+<%= link_to "Car Builds All", cars_path %>
+<%= form_for @car do |f| %>
+    <%= f.label :year %>
+    <%= f.number_field :year %><br>
+    <%= f.label :make %>
+    <%= f.text_field :make %><br>
+    <%= f.label :model %>
+    <%= f.text_field :model %><br>
+    <%= f.label :engine %>
+    <%= f.text_field :engine %><br>
+    <%= f.label :drivetrain %>
+    <%= f.text_field :drivetrain %><br>
+    <%= f.label :suspension %>
+    <%= f.text_field :suspension %><br>
+    <%= f.label :wheels_and_tires, "Wheels and Tires" %>
+    <%= f.text_field :wheels_and_tires %><br>
+    <%= f.submit %>
+<% end %>
