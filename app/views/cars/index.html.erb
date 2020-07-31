@@ -14,17 +14,14 @@
 <!-- CAR CARDS -->
 <div class="w3-row-padding">
     <% @cars.each do |c| %>
-        <div class="w3-third w3-margin-bottom">
-            <div class="w3-card-4">
-                <div class="w3-container">
-                <h2><%= link_to "#{c.owner.username}", user_path(c.owner)%> - <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></h2>
-                <%= image_tag c.images.first if c.images.attached? %>
-                <p>Engine: <%= c.engine %></p>
-                <p>Drivetrain: <%= c.drivetrain %></p>
-                <p>Suspension: <%= c.suspension %></p>
-                <p>Wheels And Tires: <%= c.wheels_and_tires %></p>
-                </div>
-            </div>
-        </div>
+
+    
+    <div class="w3-third w3-container w3-margin-bottom">
+     <%= image_tag c.images.first, class: "w3-hover-opacity", style: "width: 100%" if c.images.attached? %>
+      <div class="w3-container w3-white">
+        <p><b><%= link_to "#{c.owner.username}", user_path(c.owner)%> - <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></b></p>
+      </div>
+    </div>
+       
     <% end %>
 </div>
