@@ -21,8 +21,8 @@
         background-size: cover;
         }
         input.search-query {
-          background-color:black;
-          color:white;
+          border: none;
+          border-bottom: 1px solid gray;
           }
         </style>
 
@@ -31,10 +31,10 @@
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-
-    <%= link_to "Share Your Build", new_car_path, class: "w3-bar-item w3-button w3-padding-large w3-hide-small" %>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+    <%= link_to "HOME", cars_path, class: "w3-bar-item w3-button w3-padding-large"%>
+    <%= link_to "PROFILE", user_path(current_user), class: "w3-bar-item w3-button w3-padding-large w3-hide-small" %>
+    <%= link_to "NEW BUILD", new_car_path, class: "w3-bar-item w3-button w3-padding-large w3-hide-small" %>
+    <%= link_to "BOARDS", user_boards_path(current_user), class: "w3-bar-item w3-button w3-padding-large w3-hide-small" %>
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -43,12 +43,7 @@
         <a href="#" class="w3-bar-item w3-button">Media</a>
       </div>
     </div>
-    <%= form_tag(cars_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search], class: "w3-padding-large search-query  w3-hide-small w3-right", placeholder: "Search?", style: "text-align: right;")%>
-    <%= button_tag type: 'submit' do %>
-      <i class="fa fa-search"></i>
-      <% end %>
-  <% end %>
+
   </div>
 </div>
 

@@ -1,22 +1,29 @@
-<%= flash[:errors] %>
+
+
+<div class="w3-card-4 w3-center vertical-center" style="max-width: 500px; margin: auto; margin-top: 125px; background: white; padding: 10px;">
+    <div class="w3-container w3-center">
+     <%= flash[:errors] %>
 <%= link_to "Car Builds All", cars_path %>
 <%= form_for @car do |f| %>
     <%= f.label :images %>
     <%= f.file_field :images %><br>
-    <%= f.label :year %>
-    <%= f.number_field :year %><br>
-    <%= f.label :make %>
-    <%= f.text_field :make %><br>
-    <%= f.label :model %>
-    <%= f.text_field :model %><br>
-    <%= f.label :engine %>
-    <%= f.text_field :engine %><br>
-    <%= f.label :drivetrain %>
-    <%= f.text_field :drivetrain %><br>
-    <%= f.label :suspension %>
-    <%= f.text_field :suspension %><br>
-    <%= f.label :wheels_and_tires, "Wheels and Tires" %>
-    <%= f.text_field :wheels_and_tires %><br>
+    <%= f.label :year, nil, class: "w3-left" %>
+    <%= f.number_field :year, class: "w3-input w3-border" %><br>
+    <%= f.label :make, nil, class: "w3-left" %>
+    <%= f.text_field :make, class: "w3-input w3-border" %><br>
+    <%= f.label :model, nil, class: "w3-left" %>
+    <%= f.text_field :model, class: "w3-input w3-border" %><br>
+    <%= f.label :engine, nil, class: "w3-left" %>
+    <%= f.text_field :engine, class: "w3-input w3-border" %><br>
+    <%= f.label :drivetrain, nil, class: "w3-left" %>
+    <%= f.text_field :drivetrain, class: "w3-input w3-border" %><br>
+    <%= f.label :suspension, nil, class: "w3-left" %>
+    <%= f.text_field :suspension, class: "w3-input w3-border" %><br>
+    <%= f.label :wheels_and_tires, "Wheels and Tires", class: "w3-left" %>
+    <%= f.text_field :wheels_and_tires, class: "w3-input w3-border" %><br>
     <%= f.submit %>
 
 <% end %>
+        
+    </div>
+</div>

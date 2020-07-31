@@ -1,7 +1,7 @@
-<%= link_to "Car Builds All", cars_path %>
-<%= link_to "Profile", user_path(current_user) %>
-<h1><%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
-<%= image_tag @car.images.first if @car.images.attached? %>
+<div class="w3-card-4 w3-center vertical-center" style="width: 75%; margin: auto; margin-top: 125px; background: white; padding: 10px;">
+    <div class="w3-container w3-center">
+       <h1><%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
+<%= image_tag @car.images.first, style: "width:100%" if @car.images.attached? %>
 <p>Engine: <%= @car.engine %></p>
 <p>Drivetrain: <%= @car.drivetrain %></p>
 <p>Suspension: <%= @car.suspension %></p>
@@ -13,4 +13,7 @@
 <% else %>
     <%= link_to "Save This Ride", new_car_pin_path(@car) %>
 <% end %>
+        
+    </div>
+</div>
 
