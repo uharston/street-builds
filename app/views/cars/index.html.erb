@@ -1,3 +1,8 @@
+<div class="w3-container w3-center">
+  <h1 class="w3-jumbo">All The Builds</h1>
+  <hr class="w3-border-grey" style="margin:auto;width:40%"><br>
+</div>
+
 <%= link_to "Share Your Build", new_car_path %>
 
 <h3>Search</h3> 
@@ -6,12 +11,20 @@
     <%= submit_tag "Search" %>
 <% end %>
 
-<% @cars.each do |c| %>
-    <h2><%= link_to "#{c.owner.username}", user_path(c.owner)%> - <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></h2>
-    <%= image_tag c.images.first if c.images.attached? %>
-    <p>Engine: <%= c.engine %></p>
-    <p>Drivetrain: <%= c.drivetrain %></p>
-    <p>Suspension: <%= c.suspension %></p>
-    <p>Wheels And Tires: <%= c.wheels_and_tires %></p>
-    <hr>
-<% end %>
+<!-- CAR CARDS -->
+<div class="w3-row-padding">
+    <% @cars.each do |c| %>
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card-4">
+                <div class="w3-container">
+                <h2><%= link_to "#{c.owner.username}", user_path(c.owner)%> - <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></h2>
+                <%= image_tag c.images.first if c.images.attached? %>
+                <p>Engine: <%= c.engine %></p>
+                <p>Drivetrain: <%= c.drivetrain %></p>
+                <p>Suspension: <%= c.suspension %></p>
+                <p>Wheels And Tires: <%= c.wheels_and_tires %></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
