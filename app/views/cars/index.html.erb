@@ -8,6 +8,7 @@
 
 <% @cars.each do |c| %>
     <h2><%= link_to "#{c.owner.username}", user_path(c.owner)%> - <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></h2>
+    <%= image_tag c.images.first if c.images.attached? %>
     <p>Engine: <%= c.engine %></p>
     <p>Drivetrain: <%= c.drivetrain %></p>
     <p>Suspension: <%= c.suspension %></p>

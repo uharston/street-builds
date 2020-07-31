@@ -1,6 +1,7 @@
 <%= link_to "Car Builds All", cars_path %>
 <%= link_to "Profile", user_path(current_user) %>
 <h1><%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
+<%= image_tag @car.images.first %>
 <p>Engine: <%= @car.engine %></p>
 <p>Drivetrain: <%= @car.drivetrain %></p>
 <p>Suspension: <%= @car.suspension %></p>

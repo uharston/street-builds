@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'image_processing'
 ruby '2.6.1'
 gem 'pry'
 gem 'dotenv-rails'

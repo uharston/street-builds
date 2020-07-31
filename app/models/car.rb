@@ -11,6 +11,7 @@ class Car < ApplicationRecord
     has_many :boards, through: :pins
     has_many :users, through: :boards 
     belongs_to :owner, class_name: "User"
+    has_many_attached :images
 
     # scope :desc_year, ->
     scope :search_all_fields, ->(text){

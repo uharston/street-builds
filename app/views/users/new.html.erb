@@ -2,6 +2,8 @@
 <%= flash[:error] %>
 
 <%= form_for @user do |f| %>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %><br>
     <%= f.label :username %>
     <%= f.text_field :username %><br>
     <%= f.label :email %>
