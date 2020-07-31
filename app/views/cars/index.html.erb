@@ -1,15 +1,23 @@
-<div class="w3-container w3-center">
-  <h1 class="w3-jumbo">All The Builds</h1>
-  <hr class="w3-border-grey" style="margin:auto;width:40%"><br>
+
+<!-- FILTER AND SEARCH BAR -->
+<div class="w3-container">
+<div class="w3-section w3-bottombar w3-padding-16">
+<div class="w3-center w3-margin-top">
+  <h1 class="w3-jumbo w3-margin-top">User's Rides</h1>
+</div>
+    
+        <span class="w3-margin-right">Filter:</span> 
+        <button class="w3-button w3-black">ALL</button>
+        <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
+        <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
+        <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+    </div>
 </div>
 
-<%= link_to "Share Your Build", new_car_path %>
 
-<h3>Search</h3> 
-<%= form_tag(cars_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search])%>
-    <%= submit_tag "Search" %>
-<% end %>
+
+
+
 
 <!-- CAR CARDS -->
 <div class="w3-row-padding">

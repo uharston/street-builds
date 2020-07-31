@@ -6,6 +6,7 @@ class Car < ApplicationRecord
     validates :drivetrain, presence: true
     validates :suspension, presence: true
     validates :wheels_and_tires, presence: true
+    validates :images, presence: true
 
     has_many :pins
     has_many :boards, through: :pins
