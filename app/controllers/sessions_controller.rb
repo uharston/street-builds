@@ -18,11 +18,13 @@ class SessionsController < ApplicationController
     end 
 
     def create 
-      
-        if user = User.find_by(username: params[:username]) 
-            if user.authenticate(params[:password])
-            session[:user_id] = user.id 
-            redirect_to cars_path 
+        if user = User.find_by(username: params[:username])
+           if user.authenticate(params[:password])  
+                session[:user_id] = user.id 
+                redirect_to cars_path 
+            else 
+                flash[:error] = "Invalid Login or Password"
+                redirect_to login_path 
             end 
         else 
             flash[:error] = "Invalid Login or Password"

@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     end 
 
     def create 
+        
         user = User.create(user_params)
+
         if user.valid? 
             session[:user_id] = user.id 
             redirect_to cars_path 
@@ -27,6 +29,6 @@ class UsersController < ApplicationController
     end 
 
     def user_params 
-        params.require(:user).permit(:username, :email, :password, :admin, :avatar)
+        params.require(:user).permit(:username, :email, :password, :password_confirmation, :admin, :avatar)
     end 
 end

@@ -1,5 +1,5 @@
 
-<div class="w3-card-4 w3-center vertical-center" style="max-width: 500px; margin: auto; margin-top: 125px; background: white; padding: 10px;">
+<div class="w3-card-4 w3-center vertical-center" style="max-width: 500px; margin: auto; margin-top: 125px; background: white; padding-bottom: 20px; padding: 10px;">
     <div class="w3-container w3-center">
         <h1>Log In</h1>
         <%= flash[:error] %>
@@ -9,10 +9,15 @@
                 <%= text_field_tag :username, nil, class: "w3-input w3-border" %><br>
                 <%= label_tag :password, nil, class: "w3-left" %>
                 <%= password_field_tag :password, nil, class: "w3-input w3-border" %><br>
-                <%= submit_tag "Log In" %>
+                <%= submit_tag "Log In", class: "w3-input w3-border w3-red " %>
+                
             <% end %>
-            <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+            <p> or </p>
+            <%= button_to "Log in with Google", '/auth/google_oauth2',  class: "w3-input w3-border w3-red "  %><br><br>
+
         </div>
     </div>
+    
 </div>
+
 

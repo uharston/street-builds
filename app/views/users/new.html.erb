@@ -13,9 +13,11 @@
                 <%= f.email_field :email, class: "w3-input w3-border" %><br>
                 <%= f.label :password, nil, class: "w3-left" %>
                 <%= f.password_field :password, class: "w3-input w3-border" %><br>
-                <%= f.submit %>
-        <% end %>
+                <%= f.label :password_confirmation, "Password Confirmation", class: "w3-left" %>
+                <%= f.password_field :password_confirmation, class: "w3-input w3-border" %><br>
+                <%= f.submit "Log In", class: "w3-input w3-border w3-red " %>
             </div>
+        <% end %>
     </div>
 </div>
 
