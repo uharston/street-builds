@@ -1,14 +1,21 @@
-<h1>Sign Up</h1>
-<%= flash[:error] %>
+<div class="w3-card-4 w3-center vertical-center" style="max-width: 500px; margin: auto; margin-top: 125px; background: white; padding: 10px;">
+    <div class="w3-container w3-center">
+        <h1>Sign Up</h1>
+        <%= flash[:error] %>
 
-<%= form_for @user do |f| %>
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %><br>
-    <%= f.label :username %>
-    <%= f.text_field :username %><br>
-    <%= f.label :email %>
-    <%= f.email_field :email %><br>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
-    <%= f.submit %>
-<% end %>
+        <%= form_for @user do |f| %>
+            <div class="w3-row-padding">
+                <%= f.label :avatar, "Avatar (Optional)", class: "w3-left" %><br>
+                <%= f.file_field :avatar, class: "w3-left" %><br><br>
+                <%= f.label :username, nil, class: "w3-left" %>
+                <%= f.text_field :username, class: "w3-input w3-border" %><br>
+                <%= f.label :email, nil, class: "w3-left" %>
+                <%= f.email_field :email, class: "w3-input w3-border" %><br>
+                <%= f.label :password, nil, class: "w3-left" %>
+                <%= f.password_field :password, class: "w3-input w3-border" %><br>
+                <%= f.submit %>
+        <% end %>
+            </div>
+    </div>
+</div>
+
