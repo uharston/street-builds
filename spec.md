@@ -63,6 +63,11 @@ Confirm:
 - [ ] Views use partials if appropriate
 - [ ] Make it not ugly i.e. CSS please. 
 
+- My Cars
+- My Boards 
+- Settings 
+- Logout
+
 
 
 
@@ -79,9 +84,12 @@ FILTER CODE
 DROPDOWN MENU CODE 
 
             <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <button class="w3-padding-large w3-button"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">Media</a>
+        <%= link_to "My Cars", user_cars_path(current_user), class="w3-bar-item w3-button" %>
+        <%= link_to "My Boards", user_boards_path(current_user), class="w3-bar-item w3-button"%>
+        <%= link_to "Settings", user_cars_path(current_user), class="w3-bar-item w3-button" %>
+        <%= link_to "Log Out, logout_path, class="w3-bar-item w3-button" %>
       </div>
+        <%= image_tag current_user.images, style: "width:65px;", class: "w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity" %>
+        <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>

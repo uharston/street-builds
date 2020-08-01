@@ -5,8 +5,8 @@
         <%= flash[:error] %>
         <%= form_tag '/login', method: :post do %>
             <div class="w3-row-padding">
-                <%= label_tag :username, nil, class: "w3-left" %>
-                <%= text_field_tag :username, nil, class: "w3-input w3-border" %><br>
+                <%= label_tag :email, nil, class: "w3-left" %>
+                <%= email_field_tag :email, nil, class: "w3-input w3-border" %><br>
                 <%= label_tag :password, nil, class: "w3-left" %>
                 <%= password_field_tag :password, nil, class: "w3-input w3-border" %><br>
                 <%= submit_tag "Log In", class: "w3-input w3-border w3-red " %>

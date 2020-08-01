@@ -6,7 +6,7 @@ class Cars < ActiveRecord::Migration[6.0]
       t.string :model 
       t.string :engine 
       t.string :drivetrain 
-      t.string :suspension 
+      t.string :suspension_and_brakes
       t.string :wheels_and_tires 
       t.integer :owner_id 
     end 

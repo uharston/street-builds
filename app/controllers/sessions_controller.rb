@@ -2,10 +2,10 @@ class SessionsController < ApplicationController
 
 
     def omniauth 
-        # binding.pry 
-        # request.env['omniauth.auth']['uid']
+        binding.pry 
         user = User.create_from_omniauth(auth)
         if user.valid? 
+            binding.pry 
             session[:user_id] = user.id 
             redirect_to cars_path
         else 
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     end 
 
     def create 
-        if user = User.find_by(username: params[:username])
+        if user = User.find_by(email: params[:email])
            if user.authenticate(params[:password])  
                 session[:user_id] = user.id 
                 redirect_to cars_path 
@@ -38,6 +38,11 @@ class SessionsController < ApplicationController
     end 
 
     private 
+
+    def login_params 
+        
+    end 
+
 
     def auth 
         request.env['omniauth.auth']

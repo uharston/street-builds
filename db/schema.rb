@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_07_30_225030) do
     t.string "model"
     t.string "engine"
     t.string "drivetrain"
-    t.string "suspension"
+    t.string "suspension_and_brakes"
     t.string "wheels_and_tires"
     t.integer "owner_id"
   end
@@ -63,8 +63,10 @@ ActiveRecord::Schema.define(version: 2020_07_30_225030) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
     t.string "email"
+    t.string "image_href"
     t.string "password_digest"
     t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
