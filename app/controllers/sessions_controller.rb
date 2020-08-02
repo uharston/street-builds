@@ -2,10 +2,10 @@ class SessionsController < ApplicationController
 
 
     def omniauth 
-        binding.pry 
+         
         user = User.create_from_omniauth(auth)
         if user.valid? 
-            binding.pry 
+             
             session[:user_id] = user.id 
             redirect_to cars_path
         else 

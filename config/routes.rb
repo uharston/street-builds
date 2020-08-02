@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   delete '/boards/:id', to: 'boards#destroy', as: 'delete_board'
   get '/auth/:provider/callback' => 'sessions#omniauth'
   
-  resources :users, only: %i[show] do 
+  resources :users, only: %i[show edit update] do 
+    resources :cars, only: %i[index]
     resources :boards, only: %i[index show]
   end
   resources :pins

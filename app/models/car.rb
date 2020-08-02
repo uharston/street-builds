@@ -4,7 +4,7 @@ class Car < ApplicationRecord
     validates :model, presence: true
     validates :engine, presence: true
     validates :drivetrain, presence: true
-    validates :suspension, presence: true
+    validates :suspension_and_brakes, presence: true
     validates :wheels_and_tires, presence: true
     validates :images, presence: true
 

@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
       <style>
-      body,h1 {font-family: "Raleway", sans-serif}
+      body,h1 {font-family: "Roboto", sans-serif}
       body, html {height: 100%}
       .bgimg {
         background-image: url('https://i.pinimg.com/originals/76/2e/68/762e68eca0c41974162487aeb05b113a.jpg');
@@ -28,14 +29,23 @@
 
   <body>
   <!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <%= display_navigation_bar %>
+<% if current_user %>
+  <div class="w3-bar w3-white">
+      <%= link_to "HOME", cars_path, class: "w3-bar-item w3-large w3-button w3-padding-large"%>
+      <%= link_to "MY CARS", user_cars_path(current_user), class: "w3-bar-item w3-button w3-large w3-padding-large w3-hide-small w3-left" %>
+      <%= link_to "MY BOARDS", user_boards_path(current_user), class: "w3-bar-item w3-button w3-large w3-padding-large w3-hide-small w3-left"%>
+      <%= link_to "NEW BUILD", new_car_path, class: "w3-bar-item w3-button w3-large w3-padding-large w3-hide-small w3-left" %>
+      <div class="w3-dropdown-hover w3-hide-small w3-right w3-margin-right">
+        <button class="w3-button "><%=display_avatar(current_user)%></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to "Settings", edit_user_path(current_user), class: "w3-bar-item w3-button" %>
+          <%= link_to "Log Out", logout_path, method: :post, class: "w3-bar-item w3-button" %>
+        </div>
+      </div>
     </div>
-
   </div>
-</div>
+<% end %>
+
 
     <%= yield %>
 

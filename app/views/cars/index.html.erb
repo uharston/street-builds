@@ -1,10 +1,10 @@
 
 <!-- FILTER AND SEARCH BAR -->
 <div class="w3-container">
-    <div class="w3-section w3-bottombar w3-padding-16">
-        <div class="w3-center w3-margin-top">
-            <h1 class="w3-jumbo w3-margin-top">User's Rides</h1>
-        </div>
+    <div class="w3-section w3-bottombar">
+        
+            <h1 class="w3-jumbo w3-center">The Builds</h1>
+        
         <span class="w3-margin-right">Filter:</span> 
         <button class="w3-button w3-black">ALL</button>
         <%= link_to "ALL", cars_path, method: :post,  class: "w3-button w3-black" %>
@@ -17,7 +17,7 @@
             <%= button_tag type: 'submit' do %>
             <i class="fa fa-search"></i>
             <% end %>
-        <% end %>
+        <% end %><br><br>
     </div>
 </div>
 
@@ -28,6 +28,7 @@
 
 
 <!-- CAR CARDS -->
+<br>
 <div class="w3-row-padding">
     <% @cars.each do |c| %>
 
@@ -35,7 +36,7 @@
     <div class="w3-third w3-container w3-margin-bottom">
      <%= image_tag c.images.first, style: "width: 100%" if c.images.attached? %>
       <div class="w3-container w3-white">
-        <p><b><%= link_to "#{c.owner.username}", user_path(c.owner)%> - <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></b></p>
+        <p><b><%= link_to "#{c.owner.first_name}", user_path(c.owner)%>'s <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></b></p>
       </div>
     </div>
        

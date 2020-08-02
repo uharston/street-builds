@@ -22,6 +22,20 @@ class UsersController < ApplicationController
         locate_user
     end 
 
+    def edit 
+        check_user
+        locate_user 
+    end 
+
+    def update 
+        locate_user.update(user_params)
+        if @user.valid? 
+            redirect_to cars_path
+        else
+            redirect_to edit_user_path(current_user)
+        end 
+    end 
+
     private 
     
     def locate_user 

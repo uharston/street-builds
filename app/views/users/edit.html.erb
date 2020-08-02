@@ -1,0 +1,24 @@
+<div class="w3-card-4 w3-center vertical-center" style="max-width: 500px; margin: auto; margin-top: 125px; background: white; padding: 10px;">
+    <div class="w3-container w3-center">
+        <h1>Update Your Settings</h1>
+        <%= flash[:error] %>
+
+        <%= form_for @user do |f| %>
+            <div class="w3-row-padding">
+                <%= f.label :avatar, "Profile Picture", class: "w3-left" %><br>
+                <%= f.file_field :avatar, class: "w3-input w3-border" %><br>
+                <%= f.label :first_name, "First Name", class: "w3-left" %><br>
+                <%= f.text_field :first_name, class: "w3-input w3-border" %><br>
+                <%= f.label :last_name, "Last Name", class: "w3-left" %>
+                <%= f.text_field :last_name, class: "w3-input w3-border" %><br>
+                <%= f.label :email, nil, class: "w3-left" %>
+                <%= f.email_field :email, class: "w3-input w3-border" %><br>
+                <%= f.label :password, nil, class: "w3-left" %>
+                <%= f.password_field :password, class: "w3-input w3-border" %><br>
+                <%= f.label :password_confirmation, "Password Confirmation", class: "w3-left" %>
+                <%= f.password_field :password_confirmation, class: "w3-input w3-border" %><br>
+                <%= f.submit "Sign Up", class: "w3-input w3-border w3-red " %>
+            </div>
+        <% end %>
+    </div>
+</div>
