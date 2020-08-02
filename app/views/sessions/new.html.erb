@@ -3,13 +3,13 @@
     <div class="w3-container w3-center">
         <h1>Log In</h1>
         <%= flash[:error] %>
-        <%= form_tag '/login', method: :post do %>
+        <%= form_for @user, url: login_path do |f| %>
             <div class="w3-row-padding">
-                <%= label_tag :email, nil, class: "w3-left" %>
-                <%= email_field_tag :email, nil, class: "w3-input w3-border" %><br>
-                <%= label_tag :password, nil, class: "w3-left" %>
-                <%= password_field_tag :password, nil, class: "w3-input w3-border" %><br>
-                <%= submit_tag "Log In", class: "w3-input w3-border w3-red " %>
+                <%= f.label :email, nil, class: "w3-left" %>
+                <%= f.email_field :email, class: "w3-input w3-border" %><br>
+                <%= f.label :password, nil, class: "w3-left" %>
+                <%= f.password_field :password, class: "w3-input w3-border" %><br>
+                <%= f.submit "Log In", class: "w3-input w3-border w3-red " %>
                 
             <% end %>
             <p> or </p>

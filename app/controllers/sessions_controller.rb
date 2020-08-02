@@ -16,9 +16,8 @@ class SessionsController < ApplicationController
     end 
 
     def create 
-        binding.pry
-        if user = User.find_by(email: params[:email])
-           if user.authenticate(params[:password])  
+        if user = User.find_by(email: login_params[:email])
+           if user.authenticate(login_params[:password])  
                 session[:user_id] = user.id 
                 redirect_to cars_path 
             else 
@@ -39,7 +38,7 @@ class SessionsController < ApplicationController
     private 
 
     def login_params 
-        
+        params.require(:user).permit(:email, :password)
     end 
 
 
