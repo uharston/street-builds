@@ -4,6 +4,7 @@ class User < ApplicationRecord
     validates :last_name, presence: true 
     validates :email, presence: true 
     validates :email, uniqueness: true
+    validates :password, length: { in: 6..20 }
     has_many :boards
     has_many :cars, through: :boards 
     has_many :pins, through: :boards 
