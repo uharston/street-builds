@@ -3,23 +3,23 @@
 <div class="w3-container">
     <div class="w3-section w3-bottombar">
         
-            <h1 class="w3-jumbo w3-center">The Builds</h1>
+            <h1 class="w3-jumbo w3-center">The Builds</h1><br>
         
-        <span class="w3-margin-right">Filter:</span> 
-        <button class="w3-button w3-black">ALL</button>
-        <%= link_to "ALL", cars_path, method: :post,  class: "w3-button w3-black" %>
+        <%# <span class="w3-margin-right">Filter:</span>  %>
+        <%# <button class="w3-button w3-black">ALL</button> %>
+        <%# <%= link_to "ALL", cars_path, method: :post,  class: "w3-button w3-black" %> 
 
-        <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-        <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-        <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+        <%# <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button> %>
+        <%# <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button> %>
+        <%# <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button> %>
         <%= form_tag(cars_path, method: :get, class: "w3-padding-large  w3-hide-small w3-right", placeholder: "Search?", style: "text-align: right;") do %>
             <%= text_field_tag(:search, params[:search], class: "search-query")%>
             <%= button_tag type: 'submit' do %>
             <i class="fa fa-search"></i>
             <% end %>
-        <% end %><br><br>
+        <% end %><br><br><br>
     </div>
-</div>
+</div><br><br>
 
 
 
@@ -27,18 +27,17 @@
 
 
 
-<!-- CAR CARDS -->
-<br>
+
+<!-- SKATE SPOT CARDS -->
 <div class="w3-row-padding">
-    <% @cars.each do |c| %>
+  <% @cars.each do |c| %>  <div class="w3-third w3-margin-bottom">
+    <div class="w3-card-4">
+      <div class="w3-container">
+       <h3 class="w3-center"><%= link_to "#{c.owner.first_name}", user_path(c.owner)%>'s <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></h3>
+     <%= image_tag c.images.first, style: "width: 100%", class: "w3-margin-bottom" if c.images.attached? %>
 
-    
-    <div class="w3-third w3-container w3-margin-bottom">
-     <%= image_tag c.images.first, style: "width: 100%" if c.images.attached? %>
-      <div class="w3-container w3-white">
-        <p><b><%= link_to "#{c.owner.first_name}", user_path(c.owner)%>'s <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></b></p>
+        </div>
       </div>
     </div>
-       
-    <% end %>
+<% end %>
 </div>

@@ -2,10 +2,8 @@ class SessionsController < ApplicationController
 
 
     def omniauth 
-         
         user = User.create_from_omniauth(auth)
-        if user.valid? 
-             
+        if user.valid?
             session[:user_id] = user.id 
             redirect_to cars_path
         else 
@@ -18,6 +16,7 @@ class SessionsController < ApplicationController
     end 
 
     def create 
+        binding.pry
         if user = User.find_by(email: params[:email])
            if user.authenticate(params[:password])  
                 session[:user_id] = user.id 

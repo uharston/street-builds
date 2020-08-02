@@ -10,10 +10,10 @@ class BoardsController < ApplicationController
 
   def create
     new_board = current_user.boards.build(title: params[:title])
-    new_pins = new_board.pins.build
-    new_pins.car = locate_car
-    new_pins.save
-    if new_pins.valid? 
+    new_pin = new_board.pins.build
+    new_pin.car = locate_car
+    new_pin.save
+    if new_pin.valid? 
       redirect_to user_path(current_user)
     else 
       flash[:errors] = @board.errors.messages

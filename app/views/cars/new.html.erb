@@ -1,9 +1,14 @@
+<div class="w3-container">
+    <div class="w3-section w3-bottombar w3-padding-16">
+        <div class="w3-center w3-margin-top">
+            <h1 class="w3-jumbo w3-margin-top">Start Your Build Here</h1>
+        </div>
+    </div>
+</div>
 
-
-<div class="w3-card-4 w3-center vertical-center" style="max-width: 500px; margin: auto; margin-top: 125px; background: white; padding: 10px;">
+<div class="w3-card-4 w3-center vertical-center" style="max-width: 500px; margin: auto; margin-top: 50px; background: white; padding: 10px;">
     <div class="w3-container w3-center">
         <%= flash[:errors] %>
-        <h2>Start Your Build Here</h1>
         <%= form_for @car do |f| %>
             <span class="w3-xlarge w3-left">Step One:</span>
             <%= f.label :images, "Upload A Quality Image (think your favorite car magazine type picture)", class: "w3-left" %><br>

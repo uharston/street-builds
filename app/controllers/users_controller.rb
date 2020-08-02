@@ -22,9 +22,13 @@ class UsersController < ApplicationController
         locate_user
     end 
 
-    def edit 
-        check_user
-        locate_user 
+    def edit
+        check_user 
+        if current_user.uid.present?
+            redirect_to cars_path
+        else
+            locate_user 
+        end
     end 
 
     def update 

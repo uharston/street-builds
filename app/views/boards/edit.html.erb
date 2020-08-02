@@ -1,15 +1,35 @@
-<h1><%= @board.title %></h1>
-<%= flash[:errors] %>
-<%= form_for @board do |f| %>
-    <%= f.label :title, "Change Title:"%>
-    <%= f.text_field :title %>
-    <%= f.submit %>
-<% end %>
+<!-- FILTER AND SEARCH BAR -->
+<div class="w3-container">
+    <div class="w3-section w3-bottombar w3-padding-16">
+        <div class="w3-center w3-margin-top">
+            <%= flash[:errors] %>
+            <%= form_for @board do |f| %>
+                <%= f.label :title, "Update ", class: "w3-jumbo w3-margin-top"%>
+                <%= f.text_field :title, style: "width: 30%", class: "w3-jumbo w3-center"  %><br><br>
+                <%= f.submit %>
+            <% end %>
+        </div>
+    </div>
+</div>
+<!-- CAR CARDS -->
 
-<p>Board Owner: <%= @board.user.username %> </p>
-<p>Projects: <% @board.pins.each do |p| %> </p>
-    <%= p.car.year_make_model %> - <%= link_to "Edit Pin", edit_pin_path(p)%><br>
-    <%= p.note %>
-<% end %>
 
-<%= link_to "Delete Board", delete_board_path(@board), method: 'delete' %>
+<!-- SKATE SPOT CARDS -->
+<div class="w3-row-padding">
+    <% @board.pins.each do |p| %>  <div class="w3-third w3-margin-bottom">
+        <div class="w3-card-4">
+            <div class="w3-container">
+                <h3 class="w3-center"><%= link_to "#{p.car.owner.first_name}", user_path(p.car.owner)%>'s <%= link_to "#{p.car.year} #{p.car.make} #{p.car.model}", car_path(p.car)%></h3>
+                <%= image_tag p.car.images.first, style: "width: 100%", class: "w3-margin-bottom" if p.car.images.attached? %>
+                    <%= form_for p do |f| %>
+                        <%= f.text_field :note, class: "w3-input w3-border" %><br>
+                        <%= f.submit "Update Note", class: "w3-input w3-border w3-green"%><br>
+                    <% end %>
+                    <%= link_to "Delete Pin", delete_pin_path(p), method: :delete, class: "w3-input w3-border w3-red w3-center" %>
+                </div><br>
+            </div>`
+        </div>
+    <% end %>
+</div>
+
+

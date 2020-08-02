@@ -25,6 +25,9 @@
           border: none;
           border-bottom: 1px solid gray;
           }
+          .img{
+            width: 100%%
+}
         </style>
 
   <body>
@@ -32,19 +35,21 @@
 <% if current_user %>
   <div class="w3-bar w3-white">
       <%= link_to "HOME", cars_path, class: "w3-bar-item w3-large w3-button w3-padding-large"%>
-      <%= link_to "MY CARS", user_cars_path(current_user), class: "w3-bar-item w3-button w3-large w3-padding-large w3-hide-small w3-left" %>
+      <%= link_to "MY CARS", user_path(current_user), class: "w3-bar-item w3-button w3-large w3-padding-large w3-hide-small w3-left" %>
       <%= link_to "MY BOARDS", user_boards_path(current_user), class: "w3-bar-item w3-button w3-large w3-padding-large w3-hide-small w3-left"%>
       <%= link_to "NEW BUILD", new_car_path, class: "w3-bar-item w3-button w3-large w3-padding-large w3-hide-small w3-left" %>
       <div class="w3-dropdown-hover w3-hide-small w3-right w3-margin-right">
         <button class="w3-button "><%=display_avatar(current_user)%></button>     
         <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <%= link_to "Settings", edit_user_path(current_user), class: "w3-bar-item w3-button" %>
+          <%= omniauth_user?(current_user) %>
           <%= link_to "Log Out", logout_path, method: :post, class: "w3-bar-item w3-button" %>
         </div>
       </div>
     </div>
   </div>
 <% end %>
+
+
 
 
     <%= yield %>
