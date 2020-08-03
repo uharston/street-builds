@@ -16,7 +16,7 @@
         <h1 class="w3-center"><%= c.year %> <%= c.make %> <%= c.model %></h1>
         <%= image_tag c.images.first, style: "width:100%" if c.images.attached? %>
             <div class="w3-left">
-                <p class="w3-xlarge"> <b>Engine:</b> <%= c.engine %></p>
+                <p class="w3-xlarge"><b>Engine:</b> <%= c.engine %></p>
                 <p class="w3-xlarge"><b>Drivetrain:</b> <%= c.drivetrain %></p>
                 <p class="w3-xlarge"><b>Suspension:</b><%= c.suspension_and_brakes %></p>
                 <p class="w3-xlarge"><b>Wheels And Tires:</b><%= c.wheels_and_tires %></p>
