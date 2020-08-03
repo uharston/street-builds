@@ -1,19 +1,15 @@
 
-<!-- FILTER AND SEARCH BAR -->
+<!-- Title-->
 <div class="w3-container">
 <br>
     <div class="w3-section w3-bottombar w3-padding-16">
         <div class="w3-center w3-margin-top">
             <h1 class="w3-jumbo w3-margin-top"><%= garage_title(@user) %></h1>
-
-        
-
         </div>
-
     </div>
-
 </div>
-    
+
+<!-- GARAGE -->
  <% @user.owned_cars.each do |c| %>
     <div class="w3-card-4 vertical-center" style="width: 75%; margin: auto; margin-top: 75px; background: white; padding: 10px;">
         <div class="w3-container">
@@ -24,13 +20,7 @@
                 <p class="w3-xlarge"><b>Drivetrain:</b> <%= c.drivetrain %></p>
                 <p class="w3-xlarge"><b>Suspension:</b><%= c.suspension_and_brakes %></p>
                 <p class="w3-xlarge"><b>Wheels And Tires:</b><%= c.wheels_and_tires %></p>
-
-                <% if current_user == c.owner %>
-                    <%= link_to "Edit Your Build", edit_car_path(c), class: "w3-large w3-button w3-red w3-round-large w3-left" %> 
-                    
-                <% else %>
-                    <%= link_to "Save This Ride", new_car_pin_path(c), class: "w3-large w3-button w3-green w3-round-large w3-left"%>
-                <% end %>
+                <%= edit_or_save(c) %>
             </div>
         </div>
     </div>
