@@ -5,7 +5,6 @@
     <h1 class="w3-jumbo w3-center">The Builds</h1><br>
 
         <!-- FILTER -->
-
         <%# <span class="w3-margin-right">Filter:</span>  %>
         <%# <button class="w3-button w3-black">ALL</button> %>
         <%# <%= link_to "ALL", cars_path, method: :post,  class: "w3-button w3-black" %> 
@@ -30,15 +29,15 @@
 
 
 
-<!-- cAR INDEX -->
+<!-- CARS INDEX -->
 <div class="w3-row-padding">
   <% @cars.each do |c| %>  <div class="w3-third w3-margin-bottom">
     <div class="w3-card-4">
       <div class="w3-container">
        <h3 class="w3-center"><%= link_to "#{c.owner.first_name}", user_path(c.owner)%>'s <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></h3>
           <%= image_tag c.images.first, style: "width: 100%", class: "w3-margin-bottom" if c.images.attached? %>
-  <% end %>
         </div>
       </div>
     </div>
+    <% end %>
 </div>

@@ -17,6 +17,7 @@
 <!-- SKATE SPOT CARDS -->
 <div class="w3-row-padding">
     <% @board.pins.each do |p| %>  <div class="w3-third w3-margin-bottom">
+    <% binding.pry %>
         <div class="w3-card-4">
             <div class="w3-container">
                 <h3 class="w3-center"><%= link_to "#{p.car.owner.first_name}", user_path(p.car.owner)%>'s <%= link_to "#{p.car.year} #{p.car.make} #{p.car.model}", car_path(p.car)%></h3>

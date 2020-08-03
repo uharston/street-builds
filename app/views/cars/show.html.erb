@@ -1,22 +1,14 @@
 <div class="w3-card-4 vertical-center" style="width: 75%; margin: auto; margin-top: 125px; background: white; padding: 10px;">
     <div class="w3-container">
        <h1 class="w3-center"><%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
-
-<%= image_tag @car.images.first, style: "width:100%" if @car.images.attached? %>
-<div class="w3-left">
-   <p class="w3-xlarge"> <b>Engine:</b> <%= @car.engine %></p>
-    <p class="w3-xlarge"><b>Drivetrain:</b> <%= @car.drivetrain %></p>
-    <p class="w3-xlarge"><b>Suspension:</b><%= @car.suspension_and_brakes %></p>
-    <p class="w3-xlarge"><b>Wheels And Tires:</b><%= @car.wheels_and_tires %></p>
-
-    <% if current_user == @car.owner %>
-        <%= link_to "Edit Your Build", edit_car_path(@car), class: "w3-large w3-button w3-red w3-round-large w3-left" %> 
-        
-    <% else %>
-        <%= link_to "Save This Ride", new_car_pin_path(@car), class: "w3-large w3-button w3-green w3-round-large w3-left"%>
-    <% end %>
-</div>
-        
+       <%= image_tag @car.images.first, style: "width:100%" if @car.images.attached? %>
+        <div class="w3-left">
+            <p class="w3-xlarge"> <b>Engine:</b> <%= @car.engine %></p>
+            <p class="w3-xlarge"><b>Drivetrain:</b> <%= @car.drivetrain %></p>
+            <p class="w3-xlarge"><b>Suspension:</b><%= @car.suspension_and_brakes %></p>
+            <p class="w3-xlarge"><b>Wheels And Tires:</b><%= @car.wheels_and_tires %></p>
+            <%= edit_or_save(@car) %>
+        </div>
     </div>
 </div>
 
