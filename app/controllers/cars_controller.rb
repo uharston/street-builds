@@ -14,12 +14,12 @@ class CarsController < ApplicationController
     end 
 
     def create 
-        car = current_user.owned_cars.create(car_params)
-        if car.valid? 
-            redirect_to car_path(car)
+        @car = current_user.owned_cars.create(car_params)
+        if @car.valid? 
+            redirect_to car_path(@car)
         else 
-            flash[:errors] = car.errors.messages
-            redirect_to new_car_path 
+            flash[:errors] = @car.errors.full_messages.to_sentence
+            render :new
         end 
     end 
 
@@ -36,8 +36,8 @@ class CarsController < ApplicationController
         if @car.valid? 
             redirect_to car_path(@car)
         else 
-            flash[:errors] = @car.errors.messages
-            redirect_to edit_car_path(@car) 
+            flash[:errors] = @car.errors.full_messages.to_sentence
+            render "cars/edit"
         end 
     end 
 

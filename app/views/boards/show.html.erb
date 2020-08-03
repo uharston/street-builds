@@ -1,25 +1,24 @@
 
 
 
-<!-- FILTER AND SEARCH BAR -->
+<!-- TITLE -->
 <div class="w3-container">
-    <div class="w3-section w3-bottombar w3-padding-16">
-        <div class="w3-center w3-margin-top">
-            <h1 class="w3-jumbo w3-margin-top"><%= @board.title%></h1>
-        </div>
-        <% if current_user == @board.user %>
-    <%= link_to "Edit Board", edit_board_path(@board), class: "w3-right w3-large" %><br>
-<% end %>
-
+  <div class="w3-section w3-bottombar w3-padding-16">
+    <div class="w3-center w3-margin-top">
+        <h1 class="w3-jumbo w3-margin-top"><%= @board.title%></h1>
     </div>
+    <% if current_user == @board.user %>
+        <%= link_to "Edit Board", edit_board_path(@board), class: "w3-right w3-large" %><br>
+    <% end %>
+  </div>
 </div><br>
 
-<!-- CAR CARDS -->
 
 
 
 
-<!-- SKATE SPOT CARDS -->
+
+<!-- PINS CARDS -->
 <div class="w3-row-padding">
     
 
@@ -28,7 +27,7 @@
       <div class="w3-container">
        <h3 class="w3-center"><%= link_to "#{p.car.owner.first_name}", user_path(p.car.owner)%>'s <%= link_to "#{p.car.year} #{p.car.make} #{p.car.model}", car_path(p.car)%></h3>
      <%= image_tag p.car.images.first, style: "width: 100%", class: "w3-margin-bottom" if p.car.images.attached? %>
-
+        <h4 class="w3-center"><%= p.note %></h4>
         </div>
       </div>
     </div>

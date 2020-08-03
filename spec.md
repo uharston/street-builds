@@ -57,11 +57,11 @@ http://localhost:3000/cars/2/pins/new
 - [X] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
-- [ ] Make it not ugly i.e. CSS please. 
+- [X] The application is pretty DRY
+- [X] Limited logic in controllers
+- [X] Views use helper methods if appropriate
+- [X] Views use partials if appropriate
+- [X] Make it not ugly i.e. CSS please. 
 
 - My Cars
 - My Boards 

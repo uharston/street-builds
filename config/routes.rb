@@ -12,12 +12,14 @@ Rails.application.routes.draw do
   delete '/boards/:id', to: 'boards#destroy', as: 'delete_board'
   get '/auth/:provider/callback' => 'sessions#omniauth'
   
-  resources :users, only: %i[show edit update] do 
-    resources :cars, only: %i[index]
-    resources :boards, only: %i[index show]
-  end
   resources :pins
   resources :boards
+
+  resources :users, only: %i[show edit update] do 
+    # resources :cars, only: %i[index]
+    resources :boards, only: %i[index show]
+  end
+
   resources :cars, only: %i[index new create show edit update] do 
     post '/pins', to: 'pins#create'
     resources :pins

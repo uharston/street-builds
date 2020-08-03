@@ -9,7 +9,6 @@ class PinsController < ApplicationController
   end
 
   def create
-    binding.pry 
     if params[:pin][:board_attributes][:title].present?
       new_board = current_user.boards.build(title: params[:pin][:board_attributes][:title])
       new_pin = new_board.pins.build(note: params[:pin][:board_attributes][:note])

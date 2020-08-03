@@ -5,13 +5,13 @@ class UsersController < ApplicationController
     end 
 
     def create 
-        user = User.create(user_params)
-        if user.valid? 
-            session[:user_id] = user.id 
+        @user = User.create(user_params)
+        if @user.valid? 
+            session[:user_id] = @user.id 
             redirect_to cars_path 
         else 
-            flash[:error] = user.errors.messages
-            redirect_to signup_path 
+            flash[:error] = @user.errors.full_messages.to_sentence
+            render 'users/new'
         end 
     end 
 
@@ -34,7 +34,8 @@ class UsersController < ApplicationController
         if @user.valid? 
             redirect_to cars_path
         else
-            redirect_to edit_user_path(current_user)
+            render 'user/edit'
+            # redirect_to edit_user_path(current_user)
         end 
     end 
 
