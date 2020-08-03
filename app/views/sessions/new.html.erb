@@ -9,15 +9,12 @@
                 <%= f.email_field :email, class: "w3-input w3-border" %><br>
                 <%= f.label :password, nil, class: "w3-left" %>
                 <%= f.password_field :password, class: "w3-input w3-border" %><br>
-                <%= f.submit "Log In", class: "w3-input w3-border w3-red " %>
-                
+                <%= f.submit "Log In", class: "w3-input w3-border w3-red " %>  
             <% end %>
             <p> or </p>
             <%= button_to "Log in with Google", '/auth/google_oauth2',  class: "w3-input w3-border w3-red "  %><br><br>
-
         </div>
-    </div>
-    
+    </div>  
 </div>
 
 
