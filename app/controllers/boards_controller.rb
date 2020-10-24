@@ -1,32 +1,19 @@
 class BoardsController < ApplicationController
+  before_action :check_user
+
   def index
     @user = User.find(params[:user_id])
   end
 
-  def new
-    locate_car
-    @board = Board.new 
-  end
-
-  def create
-    new_board = current_user.boards.build(title: params[:title])
-    new_pin = new_board.pins.build
-    new_pin.car = locate_car
-    new_pin.save
-    if new_pin.valid? 
-      redirect_to user_path(current_user)
-    else 
-      flash[:errors] = @board.errors.messages
-      redirect_to edit_board_path(@board)
-    end 
-  end
 
   def show  
     locate_board
   end
 
   def edit 
-    locate_board
+    if locate_board.user != current_user
+      redirect_to cars_path
+    end
   end
 
   def update
@@ -34,7 +21,7 @@ class BoardsController < ApplicationController
     if @board.valid? 
       redirect_to board_path(locate_board)
     else 
-      flash[:errors] = @board.errors.messages
+      flash[:errors] = @board.errors.full_messages.to_sentence
       redirect_to edit_board_path(@board)
     end 
   end
