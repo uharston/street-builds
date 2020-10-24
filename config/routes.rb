@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#omniauth'
   
   resources :pins
-  resources :boards
+  resources :boards, only: %i[show edit update delete] do
+    resources :pins, only: %i[ index ]
+  end 
 
   resources :users, only: %i[show edit update] do 
     # resources :cars, only: %i[index]
