@@ -27,8 +27,11 @@ class CarsController < ApplicationController
         locate_car
     end 
 
-    def edit 
+    def edit
         locate_car
+        if @car.owner != current_user 
+            redirect_to cars_path
+        end 
     end 
 
     def update 
