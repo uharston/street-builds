@@ -14,7 +14,7 @@ class Car < ApplicationRecord
     belongs_to :owner, class_name: "User"
     has_many_attached :images
 
-    # scope :desc_year, ->
+ 
     scope :search_all_fields, ->(text){
         where("#{column_names.join(' || ')} like ?", "%#{text}%")
       }
