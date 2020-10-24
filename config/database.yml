@@ -1,13 +1,13 @@
 development:
   adapter: postgresql
-  database: my_database_development
+  database: project_build_database_development
   username: uharston
   password: 
   pool: 5
   timeout: 5000
 test:
   adapter: postgresql
-  database: my_database_test
+  database: project_build_database_test
   username: uharston
   password:
   pool: 5
@@ -15,7 +15,7 @@ test:
 
 production:
   adapter: postgresql
-  database: my_database_production
+  database: project_build_database_production
   username: uharston
   password: 
   pool: 5

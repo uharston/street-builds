@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_07_30_225030) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -52,8 +55,8 @@ ActiveRecord::Schema.define(version: 2020_07_30_225030) do
   end
 
   create_table "pins", force: :cascade do |t|
-    t.integer "board_id"
-    t.integer "car_id"
+    t.bigint "board_id"
+    t.bigint "car_id"
     t.string "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
