@@ -1,5 +1,13 @@
 class PinsController < ApplicationController
+  before_action :check_user
+
   def index
+    if params[:board_id]
+      @board = Board.find(params[:board_id])
+      @pins = @board.pins
+    else 
+      @pins = Pin.all 
+    end
   end
 
   def new
@@ -12,7 +20,7 @@ class PinsController < ApplicationController
     if params[:pin][:board_attributes][:title].present?
       new_board = current_user.boards.build(title: params[:pin][:board_attributes][:title])
       new_pin = new_board.pins.build(note: params[:pin][:board_attributes][:note])
-      new_pin.car = locate_car #
+      new_pin.car = locate_car 
       new_pin.save
       redirect_to board_path(new_pin.board)
     elsif params[:pin][:board_id]
@@ -23,6 +31,7 @@ class PinsController < ApplicationController
       redirect_to board_path(new_pin.board)
     else 
       flash[:errors] = "Board title can't be blank"
+      # render 'pins/new' 
       redirect_to new_car_pin_path(locate_car)
     end
   end
@@ -36,7 +45,12 @@ class PinsController < ApplicationController
 
   def update
     locate_pin.update(pin_param)
-    redirect_to board_path(@pin.board)
+    if @pin.valid? 
+      redirect_to board_path(@pin.board)
+    else 
+      flash[:errors] = @pin.errors.full_messages.to_sentence
+      redirect_to edit_board_path(@pin.board)
+    end
   end
 
 
