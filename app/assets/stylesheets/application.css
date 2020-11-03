@@ -1,3 +1,87 @@
+
+
+/* FONTS */
+@font-face {
+  font-family: "Bilal";
+  src: url('/assets/Bilal-d99MX.otf');
+}
+
+@font-face {
+  font-family: 'snowboardingregular';
+  src: url('/assets/snowboarding-webfont.woff2') format('woff2'),
+  url('/assets/snowboarding-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo {
+  font-family: "snowboardingregular";
+  font-size: 20vw;
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav-logo {
+  font-family: "snowboardingregular";
+  font-size: 40px;
+  
+  padding: 0px;
+  margin: 0px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: 3px solid green; 
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+body,h1 {
+  font-family: "Roboto", sans-serif
+}
+
+body, html {
+  height: 100%
+}
+
+.bgimg {
+  background-image: url('https://i.pinimg.com/originals/76/2e/68/762e68eca0c41974162487aeb05b113a.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+input.search-query {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.img{
+  width: 100%%
+}
+
+.field_with_errors{ color: red }
+
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,27 +97,3 @@
  *= require_tree .
  *= require_self
  */
-
- .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    border: 3px solid green; 
-  }
-
-  a:link {
-    text-decoration: none;
-  }
-  
-  a:visited {
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  a:active {
-    text-decoration: none;
-  }
