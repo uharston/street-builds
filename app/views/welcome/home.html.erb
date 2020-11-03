@@ -2,10 +2,12 @@
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <%# <div class="w3-display-middle"> %>
     <div class="w3-display-middle" style="width: 100%;" >
-    <h1 class="logo" style="text-align: center;">Street Builds</h1>   
+      <h1 class="logo" style="text-align: center;">Street Builds</h1>   
     </div>
-    <%= link_to "Sign Up", signup_path, class: "w3-large w3-button w3-red w3-round-large w3-center" %>
-    <%= link_to "Log In", login_path, class: "w3-large w3-button w3-red w3-round-large w3-right" %>
+    <div class='homepage-buttons'>
+      <%= link_to "Sign Up", signup_path, class: " signup" %>
+      <%= link_to "Log In", login_path, class: " login" %>
+    </div>
   <%# </div> %>
   <!-- FOOTER -->
     <div class="w3-display-bottommiddle footer">
