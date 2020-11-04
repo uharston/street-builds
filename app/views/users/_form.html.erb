@@ -2,15 +2,19 @@
     <div class="w3-row-padding">
         <%= f.label :avatar, "Profile Picture", class: "w3-left" %><br>
         <%= f.file_field :avatar, class: "w3-input w3-border" %><br>
-        <%= f.label :first_name, "First Name", class: "w3-left" %><br>
-        <%= f.text_field :first_name, class: "w3-input w3-border" %><br>
-        <%= f.label :last_name, "Last Name", class: "w3-left" %>
-        <%= f.text_field :last_name, class: "w3-input w3-border" %><br>
+        <div>
+            <%= f.label :first_name, "First Name", class: "w3-left" %> 
+            <%= f.label :last_name, "Last Name", class: "" %><br>
+        </div>
+        <div class='name-input-ctn'>
+            <%= f.text_field :first_name, class: "w3-input name-input w3-border"  %>
+            <%= f.text_field :last_name, class: "w3-input name-input w3-border" %><br><br>
+        </div>
         <%= f.label :email, nil, class: "w3-left" %>
         <%= f.email_field :email, class: "w3-input w3-border" %><br>
         <%= f.label :password, nil, class: "w3-left" %>
         <%= f.password_field :password, class: "w3-input w3-border" %><br>
         <%= f.label :password_confirmation, "Password Confirmation", class: "w3-left" %>
         <%= f.password_field :password_confirmation, class: "w3-input w3-border" %><br>
-        <%= f.submit "Update", class: "w3-input w3-border w3-red " %>
+        <%= f.submit "Sign Up", class: "blue-outline " %>
 <% end %>
