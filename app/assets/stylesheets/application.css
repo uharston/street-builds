@@ -297,7 +297,7 @@ input.search-query {
 }
 
 .img{
-  width: 100%%
+  width: 100%;
 }
 
 .field_with_errors{ color: red }
