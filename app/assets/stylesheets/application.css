@@ -285,7 +285,8 @@ body, html {
 }
 
 .background-image-login {
-  background-image: url('/assets/yellow-silvia.jpg');
+  background: image-url('/assets/yellow-silvia.jpg');
+  /* background-image: url('/assets/yellow-silvia.jpg'); */
   min-height: 100%;
   background-position: center;
   background-size: cover;
