@@ -47,5 +47,13 @@
   <i class="fa fa-linkedin w3-hover-opacity"></i>
   <p class="w3-medium">Made by URIAH HARSTON</a></p>
 </footer> %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="../../javascript/channels/animation.js"></script>
+<script>
+  let tl = gsap.timeline();
+  // tl.from(".bgimg", {duration: 0.2, opacity: 0, scale: 0.3, })
+  tl.from(".logo", {duration: 1, opacity: 0, scale: 0.3, ease: "back"}); 
+  tl.from(".btn", {duration: 0.5, opacity: 0, y: 150, stagger: 0.5})
+</script>
   </body>
 </html>
