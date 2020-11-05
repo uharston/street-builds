@@ -24,8 +24,9 @@
 }
 
 .container {
-  width: 33rem;
-  height: 22rem;
+  max-width: 600px;
+  min-width: 280px;
+  height: 25rem;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);   
   border-radius: 5px;
   position: relative;
@@ -33,6 +34,7 @@
   background: inherit;
   overflow: hidden;
 }
+
 
 .container:before {
   content: "";
