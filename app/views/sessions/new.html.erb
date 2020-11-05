@@ -11,6 +11,7 @@
                     <%= f.label :password, nil, class: "w3-left" %>
                     <%= f.password_field :password, class: "w3-input w3-border" %><br>
                     <%= f.submit "Log In", class: "full-blue w3-left"  %>  
+                <% end %>
                     <%= button_to'/auth/google_oauth2',  class: "google-btn blue-outline w3-right"  do %>
                         <span >Log In With </span>
                         <span class='google-svg'>
@@ -26,7 +27,6 @@
                             </svg>
                         </span>
                     <% end %>
-                <% end %>
 
             
     </div>
