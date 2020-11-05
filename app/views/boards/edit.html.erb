@@ -7,7 +7,7 @@
                 <%= f.label :title, "Update ", class: "w3-jumbo w3-margin-top"%>
                 <%= f.text_field :title, style: "width: 30%", class: "w3-jumbo w3-center"  %><br><br>
                 <%= f.submit "Update", class: "w3-large w3-button w3-black" %>
-                <%= link_to "Delete Board (Careful!!)", delete_board_path(@board), method: :delete, data: {confirm: "Are you sure?"} , class: "w3-large w3-button w3-right" %>
+                <%= link_to "Delete Board (Careful!!)", delete_board_path(@board), method: :delete, data: {confirm: "Are you sure?"} , class: "full-red w3-right" %>
             <% end %>
         </div>
     </div>
@@ -23,9 +23,9 @@
                 <%= image_tag p.car.images.first, style: "width: 100%", class: "w3-margin-bottom" if p.car.images.attached? %>
                     <%= form_for p do |f| %>
                         <%= f.text_field :note, class: "w3-input w3-border" %><br>
-                        <%= f.submit "Update Note", class: "w3-input w3-border w3-green"%><br>
+                        <%= f.submit "Update Note", class: "green-outline"%><br>
                     <% end %>
-                    <%= link_to "Delete Pin", delete_pin_path(p), method: :delete, data: {confirm: "Are you sure?"},  class: "w3-input w3-border w3-red w3-center" %>
+                    <%= link_to "Delete Pin", delete_pin_path(p), method: :delete, data: {confirm: "Are you sure?"},  class: "full-red w3-center" %>
                 </div><br>
             </div>`
         </div>

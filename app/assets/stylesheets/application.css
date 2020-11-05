@@ -67,7 +67,6 @@
   cursor: pointer;
   border-radius: 6px;
   /* float: right; */
-
 }
 
 
@@ -83,6 +82,49 @@
   cursor: pointer;
   border-radius: 6px;
   
+}
+
+
+.green-outline {
+  background-color: white;
+  color: green;
+  border: 2px solid green;
+  padding: 10px 70px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+  
+}
+
+.red-outline {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  padding: 10px 70px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+  
+}
+
+.full-red {
+  background-color: red;
+  color: white;
+  border: 2px solid red;
+  padding: 10px 70px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+  /* float: right; */
 }
 
 
