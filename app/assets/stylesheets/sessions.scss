@@ -1,3 +1,15 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.bg-img {
+    background-image: url('/assets/yellow-silvia.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  
+  }
