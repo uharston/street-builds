@@ -11,7 +11,7 @@ module UsersHelper
         elsif user.image_href 
             image_tag(user.image_href, style:"width:50px;", class: "w3-circle  w3-hover-opacity")
         else
-            image_tag("https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",  style:"width:50px;", class: "w3-circle  w3-hover-opacity")
+            image_tag("https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png",  style:"width:50px;", class: "w3-circle  w3-hover-opacity")
         end
     end 
 
@@ -26,9 +26,9 @@ module UsersHelper
     
     def edit_or_save(user)
          if current_user == user.owner 
-            link_to "Edit Your Build", edit_car_path(user), class: "w3-large w3-button w3-red w3-round-large w3-left"          
+            link_to "Edit Your Build", edit_car_path(user), class: "green-outline"          
         else 
-            link_to "Save This Ride", new_car_pin_path(user), class: "w3-large w3-button w3-green w3-round-large w3-left"
+            link_to "Save This Ride", new_car_pin_path(user), class: "green-outline"
         end 
     end
 
