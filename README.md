@@ -48,6 +48,7 @@ Use you favorite web browser to navigate to the localhost link printed in the te
     - Sqlite - Development Database
     - Postgres - Production Database 
     - Heroku - Deployment Service 
+    - AWS S3 - Cloud Storage
 
 # Contributing
 
