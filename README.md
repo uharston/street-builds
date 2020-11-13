@@ -19,7 +19,7 @@ You must be running `Ruby 2.6.1` and `Rails 6.0.3.2` . One way to accomplish thi
 
 ## Installation 
 
-Fork and clone the repository using your prefered method. 
+Fork and clone the repository using your preferred method. 
 
 Then load all of the dependencies...
 
