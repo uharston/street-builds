@@ -1,6 +1,6 @@
 ![Street Builds Logo](./app/assets/images/streetbuilds-logo.png)
 
-A website for car enthusiast to share their project car with the community and to be inspired by fellow enthusiasts' rides. 
+A website for car enthusiast to share their project car with the community and to be inspired by fellow enthusiasts' rides. 🏎️ 
 
 🔰 [Click here](https://streetbuilds.herokuapp.com) 🔰 to go to the live build.
 
