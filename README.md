@@ -1,4 +1,4 @@
-# Street Builds
+![Street Builds Logo](./app/assets/images/streetbuilds-logo.png)
 
 A website for car enthusiast to share their project car with the community and to be inspired by fellow enthusiasts' rides. 
 
