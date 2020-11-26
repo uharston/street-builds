@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .bgimg {
-    background-image: url('https://i.pinimg.com/originals/76/2e/68/762e68eca0c41974162487aeb05b113a.jpg');
+    background-image: image-url('/assets/white-mr2.jpg');
     min-height: 100%;
     background-position: center;
     background-size: cover;
@@ -18,29 +18,41 @@
   
 .logo {
     font-family: "Bilal";
-    font-size: 125px;
-
+    font-size: 150px;
     padding: 0px;
     margin: 0px;
 }
 
-.button-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .signup-btn {
-      float: right;
-  }
-  
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.homepage-buttons {
+  width: 60%
+}
+
+.signup-btn {
+  float: right;
+}
+
 
 
 .footer {
-    font-size: large;
+  font-size: large;
+}
+
+
+
+@media screen and (max-width: 890px) {
+  .logo {
+    font-size: 120px
   }
-  
-  
+  .homepage-buttons {
+    width: 80%;
+  }
+}
