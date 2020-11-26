@@ -15,9 +15,24 @@ class Car < ApplicationRecord
     has_many_attached :images
 
  
-    scope :search_all_fields, ->(text){
-        where("#{column_names.join(' || ')} like ?", "%#{text}%")
-      }
+    def self.search_all_fields(text)
+        query = self.clean_query
+        return Car.where( query, "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%")
+    end
+
+      def self.clean_query 
+        query = column_names.map do |e, i| 
+            if e == 'id' || e == 'year' || e == 'owner_id' 
+                "cast(#{e} as text) LIKE ? OR"
+            else 
+                "#{e} LIKE ? OR"
+            end
+          end
+          query.push(query.pop().gsub(" OR", "")).join(" ")
+      end 
+
+
+ 
 
     def year_make_model
         "#{self.year} #{self.make} #{self.model}"
