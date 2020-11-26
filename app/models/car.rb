@@ -20,19 +20,16 @@ class Car < ApplicationRecord
         return Car.where( query, "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%", "%#{text}%")
     end
 
-      def self.clean_query 
+    def self.clean_query 
         query = column_names.map do |e, i| 
             if e == 'id' || e == 'year' || e == 'owner_id' 
                 "cast(#{e} as text) LIKE ? OR"
             else 
                 "#{e} LIKE ? OR"
             end
-          end
-          query.push(query.pop().gsub(" OR", "")).join(" ")
-      end 
-
-
- 
+        end
+        query.push(query.pop().gsub(" OR", "")).join(" ")
+    end 
 
     def year_make_model
         "#{self.year} #{self.make} #{self.model}"
