@@ -40,7 +40,7 @@
       <div class="w3-card-4">
         <div class="w3-container">
           <h3 class="w3-center"><%= link_to "#{c.owner.first_name}", user_path(c.owner)%>'s <%= link_to "#{c.year} #{c.make} #{c.model}", car_path(c)%></h3>
-          <div class='img-ctn'>
+          <div class='idx-ctn img-ctn' >
             <%= image_tag c.images.first, style: "width: 100%", class: "idx-img" if c.images.attached? %>
           </div>
         </div>
@@ -48,3 +48,5 @@
     </div>
   <% end %>
 </div>
+
+
