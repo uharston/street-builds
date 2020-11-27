@@ -22,11 +22,14 @@
 <div class="w3-row-padding">
     
 
-  <% @board.pins.each do |p| %>  <div class="w3-third w3-margin-bottom">
+  <% @board.pins.each do |p| %>  
+  <div class="w3-col l4 w3-margin-bottom">
     <div class="w3-card-4">
       <div class="w3-container">
-       <h3 class="w3-center"><%= link_to "#{p.car.owner.first_name}", user_path(p.car.owner)%>'s <%= link_to "#{p.car.year} #{p.car.make} #{p.car.model}", car_path(p.car)%></h3>
+       <h3 class="w3-center idx-card-titles"><%= link_to "#{p.car.owner.first_name}", user_path(p.car.owner)%>'s <%= link_to "#{p.car.year} #{p.car.make} #{p.car.model}", car_path(p.car)%></h3>
+     <div class='idx-ctn img-ctn' >
      <%= image_tag p.car.images.first, style: "width: 100%", class: "w3-margin-bottom" if p.car.images.attached? %>
+        </div>
         <h4 class="w3-center"><%= p.note %></h4>
         </div>
       </div>

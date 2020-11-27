@@ -13,9 +13,10 @@
 
 <!-- BOARDS -->
 <div class="w3-row-padding">
-  <% @user.boards.each do |c| %> <div class="w3-third w3-margin-bottom">
+  <% @user.boards.each do |c| %> 
+    <div class="w3-col l4 w3-margin-bottom">
       <div class="w3-container">
-    <h4 class="w3-center w3-xxxlarge " ><%= link_to "#{c.title}", board_path(c) %> </h4>
+        <h4 class="w3-center w3-xxxlarge " ><%= link_to "#{c.title}", board_path(c) %> </h4>
       </div>
     </div>
     <% end %>
