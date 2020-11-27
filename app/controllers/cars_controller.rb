@@ -3,7 +3,7 @@ class CarsController < ApplicationController
 
     def index
         if params[:search].present? 
-            @cars = Car.search_all_fields(params[:search])
+            @cars = Car.search_all_fields(params[:search].strip)
         else
             @cars = Car.all 
         end 
