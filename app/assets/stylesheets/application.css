@@ -178,11 +178,19 @@ input.search-query {
   align-items: center;
 }
 
+.idx-card-titles {
+  font-size: 1.5vw;
+}
+
 @media screen and (max-width: 993px) {
   .idx-ctn {
     margin-bottom: 15px;
   } 
+  .idx-card-titles {
+    font-size: 5vw;
+  }
 }
+
 
 
 
