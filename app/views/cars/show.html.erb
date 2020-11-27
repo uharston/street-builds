@@ -4,12 +4,14 @@
     <div class="w3-container">
        <h1 class="w3-center"><%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
        <%= image_tag @car.images.first, style: "width:100%" if @car.images.attached? %>
-        <div class="w3-left">
+        <div class="mods-ctn">
             <p class="w3-xlarge"> <b>Engine:</b> <%= @car.engine %></p>
             <p class="w3-xlarge"><b>Drivetrain:</b> <%= @car.drivetrain %></p>
             <p class="w3-xlarge"><b>Suspension:</b><%= @car.suspension_and_brakes %></p>
             <p class="w3-xlarge"><b>Wheels And Tires:</b><%= @car.wheels_and_tires %></p>
-            <%= edit_or_save(@car) %>
+            <div class='mods-btn'>
+                <%= edit_or_save(@car) %>
+            </div>
         </div>
     </div>
 </div>
