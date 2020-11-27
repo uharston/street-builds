@@ -56,5 +56,27 @@
   tl.from(".logo-letter", {duration: 1.5, opacity: 0, scale: 0.3,  stagger: 0.2}); 
   tl.from(".btn", {duration: 0.2, opacity: 0, y: 150, stagger: 0.3})
 </script>
+
+<script>
+  let x = window.matchMedia("(max-width: 993px")
+  function toggleImageCtn(x) {
+    console.log('inside toggle')
+    if (x.matches) {
+      let imageDivs = document.getElementsByClassName('idx-ctn')
+      for( div of imageDivs) {
+        div.classList.remove('img-ctn')
+      }
+    } else {
+      let imageDivs = document.getElementsByClassName('idx-ctn')
+      for( div of imageDivs) {
+        div.classList.add('img-ctn')
+      }
+    }
+  }
+
+  toggleImageCtn(x)
+  x.addListener(toggleImageCtn)
+
+</script>
   </body>
 </html>

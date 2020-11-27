@@ -178,6 +178,12 @@ input.search-query {
   align-items: center;
 }
 
+@media screen and (max-width: 993px) {
+  .idx-ctn {
+    margin-bottom: 15px;
+  } 
+}
+
 
 
 
